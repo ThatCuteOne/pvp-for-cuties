@@ -1,0 +1,49 @@
+{
+    "model": {
+        "type": "minecraft:condition",
+        "property": "minecraft:using_item",
+        "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/golden_carrot"
+        },
+        "on_true": {
+            "property": "minecraft:use_duration",
+            "scale": 0.03,
+            "type": "minecraft:range_dispatch",
+            "entries": [
+                {
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "eatinganimation:item/food/golden_carrot/golden_carrot0"
+                    },
+                    "threshold": 0.2
+                },
+                {
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "eatinganimation:item/food/golden_carrot/golden_carrot1"
+                    },
+                    "threshold": 0.4
+                },
+                {
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "eatinganimation:item/food/golden_carrot/golden_carrot2"
+                    },
+                    "threshold": 0.6
+                },
+                {
+                    "model": {
+                        "type": "minecraft:model",
+                        "model": "eatinganimation:item/food/golden_carrot/golden_carrot3"
+                    },
+                    "threshold": 0.8
+                }
+            ],
+            "fallback": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/golden_carrot"
+            }
+        }
+    }
+}

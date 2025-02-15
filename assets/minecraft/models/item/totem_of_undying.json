@@ -1,0 +1,41 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "builtin/generated",
+	"textures": {
+		"layer0": "item/totem_of_undying"
+	},
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [2, -30, 1.13],
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 25],
+			"translation": [2, -30, 1.13],
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 13, 7]
+		},
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, -4, 0 ],
+            "scale": [ 0.0, 0.0, 0.0 ]
+        }
+	}
+}

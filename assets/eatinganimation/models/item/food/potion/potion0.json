@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "eatinganimation:item/food/potion/potion0",
+      "layer1": "minecraft:item/potion"
+    }
+  }

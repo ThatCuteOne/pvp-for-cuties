@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "eatinganimation:item/food/melon_slice/melon_slice3"
+    }
+  }
+  

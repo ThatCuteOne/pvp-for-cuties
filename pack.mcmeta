@@ -1,0 +1,48 @@
+{
+    "pack": {
+        "description": "By §dCuties §rfor §dCuties :3\n         §8[1.21.3+]",
+        "pack_format": 48,
+        "supported_formats": {
+            "min_inclusive": 40,
+            "max_inclusive": 320
+        },
+        "authors":[
+            {
+                "name":"ThatCuteOne",
+                "links":"https://modrinth.com/user/ThatCuteOne",
+                "used":"Everything else that isn't mentioned here"
+            },
+            {
+                "name":"xSpinHDx",
+                "links":"https://modrinth.com/resourcepack/vanilla-plus-jaronwqhd",
+                "used":"Diamond Armor(modified), Netherite Armor(modified), Trident(modified), Netherite Tools(modified), Diamond Tools, Ancient Debris",
+                "license":"https://creativecommons.org/licenses/by-sa/4.0/deed.de"
+            },
+            {
+                "name":"Vanilla Tweaks",
+                "links":"https://vanillatweaks.net/",
+                "used":"Enchantment Glint(modified), 2D Beds"
+            },
+            {
+                "name":"Ivory",
+                "links":"https://www.youtube.com/@MythrodakTV",
+                "used":"The shape of the Armor(heavily modified)"
+            },
+            {
+                "name":"Bergundy1",
+                "links":"https://modrinth.com/user/Bergundy1",
+                "used":"The gui from thier seek ui pack(modified)"
+            },
+            {
+                "name":"PiXeLJoWY32",
+                "links":"https://modrinth.com/user/PiXeLJoWY32",
+                "used":"the xp bar from thier xp bar pack(modified)"
+            },
+            {
+                "name":"frugbug",
+                "links":"https://modrinth.com/user/frugbug",
+                "used":"The Heart from thier GUI Retextures pack(modified)"
+            }
+        ]
+    }
+}

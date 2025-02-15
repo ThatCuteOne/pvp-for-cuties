@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "eatinganimation:item/food/sweet_berries/sweet_berries2"
+    }
+  }
+  
