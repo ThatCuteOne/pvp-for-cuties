@@ -41,7 +41,6 @@
 
 
 
-
 <details>
 <summary>👀Unobstrusive👀</summary>
 
@@ -58,6 +57,15 @@
 
 
 </details>
+
+
+<details>
+<summary>🩷Pink Damage Tilt🩷</summary>
+
+![Steve is taking damage](https://cdn.modrinth.com/data/iQx2ijVe/images/77f7580c754dfc9dbe88d1ddb7d86ae7b56eab62.png)
+
+</details>
+
 
 
 
