@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "builtin/generated",
+	"parent": "item/totem_of_undying",
 	"textures": {
 		"layer0": "item/totem_of_undying"
 	},
