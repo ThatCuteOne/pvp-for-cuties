@@ -1,2 +1,4 @@
 Credits:
 Vanilla Tweaks: https://vanillatweaks.net/
+
+everyone else can be found in the pack.mcmeta
