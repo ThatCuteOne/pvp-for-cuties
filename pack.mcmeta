@@ -1,11 +1,7 @@
 {
     "pack": {
-        "description": "By §dCuties §rfor §dCuties :3\n         §8[1.21.3+]",
-        "pack_format": 46,
-        "supported_formats": {
-            "min_inclusive": 40,
-            "max_inclusive": 320
-        },
+        "description": "By §dCuties §rfor §dCuties :3\n         §8[1.8.9-backport]",
+        "pack_format": 1,
         "authors":[
             {
                 "name":"ThatCuteOne",

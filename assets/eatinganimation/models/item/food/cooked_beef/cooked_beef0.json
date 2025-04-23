@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:item/generated",
-    "textures": {
-      "layer0": "eatinganimation:item/food/cooked_beef/cooked_beef0"
-    }
-  }
-  
