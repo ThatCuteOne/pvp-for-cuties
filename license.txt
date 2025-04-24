@@ -3,16 +3,11 @@ Licensing
 All files under "assets/*/textures/gui/*" fall under the MIT License(mit-license.org)
 
 
-All files under "assets/minecraft/textures/item/diamond_*.png" fall under CC-BY-SA-4.0
-All files under "assets/minecraft/textures/item/netherite_*.png" fall under CC-BY-SA-4.0
+All files under "assets/minecraft/textures/items/diamond_*.png" fall under CC-BY-SA-4.0
 
-All files under "assets/minecraft/textures/entity/equipment/*/diamond" fall under CC-BY-SA-4.0
-All files under "assets/minecraft/textures/entity/equipment/*/netherite" fall under CC-BY-SA-4.0
-
-All files under "assets/minecraft/textures/entity/equipment/*/diamond" fall under CC-BY-SA-4.0
+All files under "assets/minecraft/textures/models/armor/diamond_*" fall under CC-BY-SA-4.0
 
 All files not mentioned in the notices above are licensed under CC-BY-4.0
-
 
 CC-BY-SA-4.0 Link : "https://creativecommons.org/licenses/by-sa/4.0/ "
 
