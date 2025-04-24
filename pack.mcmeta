@@ -40,13 +40,5 @@
                 "used":"The Heart from thier GUI Retextures pack(modified)"
             }
         ]
-    },
-    "overlays": {
-		"entries": [
-			{
-				"formats": {"min_inclusive": 1, "max_inclusive": 42},
-				"directory": "overlay_pre_46"
-			}
-		]
-	}
+    }
 }
