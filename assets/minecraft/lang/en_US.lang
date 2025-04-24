@@ -1,0 +1,17 @@
+
+language.name=English
+language.region=US
+language.code=en_US
+
+itemGroup.buildingBlocks=§fBuilding Blocks
+itemGroup.decorations=§fDecoration Blocks
+itemGroup.redstone=§fRedstone
+itemGroup.transportation=§fTransportation
+itemGroup.misc=§fMiscellaneous
+itemGroup.search=§fSearch Items
+itemGroup.food=§fFoodstuffs
+itemGroup.tools=§fTools
+itemGroup.combat=§fCombat
+itemGroup.brewing=§fBrewing
+itemGroup.materials=§fMaterials
+itemGroup.inventory=§fSurvival Inventory
