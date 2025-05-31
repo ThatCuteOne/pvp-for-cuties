@@ -17,7 +17,7 @@ jobs:
     - name: Create ZIP file
       run:
         COMMIT_ID=$(git rev-parse --short HEAD)
-        ZIP_NAME="PvP For Cuties.zip"
+        ZIP_NAME="PvP For Cuties [${{ github.ref_name }}].zip"
         echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
         zip -r "${ZIP_NAME}" assets
     - name: Upload ZIP artifact
@@ -45,6 +45,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ github.workspace }}/${{ env.ZIP_NAME }}
+        asset_path: ${{ github.workspace }}/
         asset_name: "${{ env.ZIP_NAME }}"
         asset_content_type: application/zip
