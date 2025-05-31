@@ -12,14 +12,6 @@ jobs:
           uses: actions/checkout@v4
           with:
             fetch-depth: 0
-
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.13.3'
-        - name: Run Python Build script
-          run: python build.py
-
         - name: Run PackSquash
           uses: ComunidadAylas/PackSquash-action@v4
           with:
@@ -28,9 +20,9 @@ jobs:
         - name: Create ZIP file
           run: |
             COMMIT_ID=$(git rev-parse --short HEAD)
-            ZIP_NAME="Shulker_Labels_build.${{ github.run_number }}.zip"
+            ZIP_NAME="PvP_For_Cuties_build.${{ github.run_number }}.zip"
             echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
-            zip -r "${ZIP_NAME}" README.md LICENSE pack.mcmeta assets
+            zip -r "${ZIP_NAME}" .
         - name: Upload ZIP artifact
           uses: actions/upload-artifact@v4
           with:
