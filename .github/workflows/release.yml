@@ -15,7 +15,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Create ZIP file
-      run: 
+      run: |
         ls -la
         COMMIT_ID=$(git rev-parse --short HEAD)
         ZIP_NAME="PvP For Cuties ${{ github.ref_name }}.zip"
