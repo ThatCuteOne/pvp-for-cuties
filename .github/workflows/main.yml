@@ -18,6 +18,7 @@ jobs:
             ZIP_NAME="PvP_For_Cuties_build.${{ github.run_number }}.zip"
             echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
             zip -r "${ZIP_NAME}" .
+            zip -d "${ZIP_NAME}" .git ;
         - name: Upload ZIP artifact
           uses: actions/upload-artifact@v4
           with:
