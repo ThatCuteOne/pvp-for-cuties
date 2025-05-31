@@ -8,12 +8,17 @@ on:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    
+    outputs:
+      changelog-content: ${{ steps.read-changelog.outputs.changelog }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+    - name: Read changelog file
+      run: |
+          CHANGELOG=$(cat CHANGELOG.md)
+          echo "changelog=${CHANGELOG}" >> $GITHUB_OUTPUT
     - name: Create ZIP file
       run: |
         COMMIT_ID=$(git rev-parse --short HEAD)
@@ -36,6 +41,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
+          ${{ steps.read-changelog.outputs.changelog }}
           Automated release created by GitHub Actions
         draft: false
         prerelease: false
@@ -58,4 +64,5 @@ jobs:
         loaders: '["minecraft"]'
         game-versions: '["1.21.4", "1.21.5"]'
         files: '${{ env.ZIP_NAME }}'
-        token: ${{ secrets.MODRINTH}}
+        token: ${{ secrets.MODRINTH}},
+        changelog: ${{ steps.read-changelog.outputs.changelog }}
