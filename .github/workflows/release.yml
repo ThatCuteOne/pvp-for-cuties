@@ -16,10 +16,11 @@ jobs:
         fetch-depth: 0
     - name: Create ZIP file
       run:
-        COMMIT_ID=$(git rev-parse --short HEAD)
+        ls -la;
+        COMMIT_ID=$(git rev-parse --short HEAD);
         echo "ZIP_NAME=PvP For Cuties ${{ github.ref_name }}.zip" >> $GITHUB_ENV ;
-        zip -r "${ZIP_NAME}" . ;
-        zip -d "${ZIP_NAME}" ".git/*" ".github/*";
+        zip -r "${ZIP_NAME}" . -x ".git/*" ".github/*";
+        ls -la;
     - name: Upload ZIP artifact
       uses: actions/upload-artifact@v4
       with:
