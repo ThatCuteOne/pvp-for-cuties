@@ -20,7 +20,7 @@ jobs:
         echo "ZIP_NAME=PvP For Cuties ${{ github.ref_name }}.zip" >> $GITHUB_ENV ;
         zip -r "${ZIP_NAME}" . ;
         zip -d "${ZIP_NAME}" ".git/*" ".github/*";
-        sudo find / -name "${ZIP_NAME}";
+        ls -la "${ZIP_NAME}"
     - name: Upload ZIP artifact
       uses: actions/upload-artifact@v4
       with:
@@ -46,6 +46,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: "${{ github.workspace }}/${{ env.ZIP_NAME }}"
+        asset_path: "${{ env.ZIP_NAME }}"
         asset_name: "${{ env.ZIP_NAME }}"
         asset_content_type: application/zip
