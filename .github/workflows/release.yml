@@ -20,7 +20,7 @@ jobs:
         echo "ZIP_NAME=PvP For Cuties ${{ github.ref_name }}.zip" >> $GITHUB_ENV ;
         zip -r "${ZIP_NAME}" . ;
         zip -d "${ZIP_NAME}" ".git/*" ".github/*";
-        ls -la "${ZIP_NAME}" ;
+        ls -laR / "${ZIP_NAME}" ;
     - name: Upload ZIP artifact
       uses: actions/upload-artifact@v4
       with:
