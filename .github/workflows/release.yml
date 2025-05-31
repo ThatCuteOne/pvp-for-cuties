@@ -54,7 +54,7 @@ jobs:
       uses: cloudnode-pro/modrinth-publish@v2
       with:
         project: iQx2ijVe
-        version: ${{ github.ref }}
+        version: ${{ github.ref_name }}
         loaders: '["minecraft"]'
         game-versions: '["1.21.4", "1.21.5"]'
         files: '${{ env.ZIP_NAME }}'
