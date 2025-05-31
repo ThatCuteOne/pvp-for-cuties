@@ -20,6 +20,7 @@ jobs:
         ZIP_NAME="PvP For Cuties ${{ github.ref_name }}.zip"
         echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
         zip -r "${ZIP_NAME}" . -x ".git/*" ".github/*"
+        echo "${ZIP_NAME}"
     - name: Upload ZIP artifact
       uses: actions/upload-artifact@v4
       with:
@@ -56,5 +57,5 @@ jobs:
         version: ${{ github.ref }}
         loaders: '["minecraft"]'
         game-versions: '["1.21.4", "1.21.5"]'
-        files: '${{ env.ZIP_NAME }}"]'
+        files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
