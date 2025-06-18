@@ -18,6 +18,9 @@ jobs:
     - name: Read changelog file
       run: |
           CHANGELOG=$(cat CHANGELOG.md)
+          CHANGELOG="${CHANGELOG//'%'/'%25'}"
+          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
           echo "changelog=${CHANGELOG}" >> $GITHUB_OUTPUT
     - name: Create ZIP file
       run: |
@@ -62,7 +65,7 @@ jobs:
         project: iQx2ijVe
         version: ${{ github.ref_name }}
         loaders: '["minecraft"]'
-        game-versions: '["1.21.4", "1.21.5"]'
+        game-versions: '["1.21.4", "1.21.5","1.21.6"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}},
         changelog: ${{ steps.read-changelog.outputs.changelog }}
