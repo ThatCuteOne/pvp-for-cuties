@@ -54,6 +54,10 @@
             {
                 "formats":{"min_inclusive": 55,"max_inclusive": 200},
                 "directory": "overlay_1.21.5"
+            },
+            {
+                "formats":{"min_inclusive": 63,"max_inclusive": 200},
+                "directory": "overlay_1.21.6"
 
             }
 		]
