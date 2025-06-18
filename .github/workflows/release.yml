@@ -16,6 +16,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Read changelog file
+      id: read-changelog
       run: |
           CHANGELOG=$(cat CHANGELOG.md)
           CHANGELOG="${CHANGELOG//'%'/'%25'}"
@@ -40,11 +41,12 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CHANGELOG_CONTENT: ${{ steps.read-changelog.outputs.changelog }}
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
-          ${{ steps.read-changelog.outputs.changelog }}
+          ${{ env.CHANGELOG_CONTENT }}
           Automated release created by GitHub Actions
         draft: false
         prerelease: false
@@ -58,7 +60,12 @@ jobs:
         asset_path: "${{ env.ZIP_NAME }}"
         asset_name: "${{ env.ZIP_NAME }}"
         asset_content_type: application/zip
-    
+    - name: Decode changelog for Modrinth
+      id: decode-changelog
+      run: |
+        # Replace %0A with actual newlines
+        DECODED_CHANGELOG=$(echo "${{ steps.read-changelog.outputs.changelog }}" | sed 's/%0A/\n/g')
+        echo "DECODED_CHANGELOG=${DECODED_CHANGELOG}" >> $GITHUB_OUTPUT
     - name: Upload to Modrinth
       uses: cloudnode-pro/modrinth-publish@v2
       with:
@@ -68,4 +75,4 @@ jobs:
         game-versions: '["1.21.4", "1.21.5","1.21.6"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
-        changelog: ${{ steps.read-changelog.outputs.changelog }}
+        changelog: ${{ steps.decode-changelog.outputs.DECODED_CHANGELOG }}
