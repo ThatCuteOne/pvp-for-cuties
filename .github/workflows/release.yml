@@ -67,5 +67,5 @@ jobs:
         loaders: '["minecraft"]'
         game-versions: '["1.21.4", "1.21.5","1.21.6"]'
         files: '${{ env.ZIP_NAME }}'
-        token: ${{ secrets.MODRINTH}},
+        token: ${{ secrets.MODRINTH}}
         changelog: ${{ steps.read-changelog.outputs.changelog }}
