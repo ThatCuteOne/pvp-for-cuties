@@ -5,11 +5,11 @@
 <details>
 <summary>💅New Armor With Crowns💅</summary>
 
-![All Armortypes side by side](https://cdn.modrinth.com/data/iQx2ijVe/images/d45c216e6bb2d93cee5dcc89269413a909e9ab2d_350.webp)
+![All Armortypes side by side](https://cdn.modrinth.com/data/iQx2ijVe/images/d45c216e6bb2d93cee5dcc89269413a909e9ab2d.png)
 
 ## Even works with Armor Trims !!
 
-![All Armors Side by Side but with Trims](https://cdn.modrinth.com/data/iQx2ijVe/images/5391305e35c64f7bd8c16b05cc5653d1a7c716d8_350.webp)
+![All Armors Side by Side but with Trims](https://cdn.modrinth.com/data/iQx2ijVe/images/5391305e35c64f7bd8c16b05cc5653d1a7c716d8.png)
 
 </details>
 
