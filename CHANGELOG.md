@@ -2,3 +2,4 @@
 - added new crit sounds
 - added new splashes
 - tweaked modmenu icon
+- made gold armor rose gold
