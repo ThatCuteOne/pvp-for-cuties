@@ -54,7 +54,7 @@
 		"entries": [
 			{
 				"formats": {"min_inclusive": 1, "max_inclusive": 42},
-				"directory": "overlay_pre_46"
+				"directory": "overlay_pre_1.21.4"
 			},
             {
                 "formats":{"min_inclusive": 55,"max_inclusive": 200},

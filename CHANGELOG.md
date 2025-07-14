@@ -4,3 +4,4 @@
 - added new splashes
 - made explosions invisible
 - tweaked modmenu icon
+- fixed pre 1.21.4 overlay
