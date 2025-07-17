@@ -6,3 +6,5 @@ _Gold Textures and Crit Sounds!_
 - made explosions invisible
 - tweaked modmenu icon
 - fixed pre 1.21.4 overlay
+- respackopts toggle for new crit sound
+- tweaked iron pickaxe shape to make it more distinguished from the netherite one
