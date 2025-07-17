@@ -1,5 +1,6 @@
 # PVP for Cuties v1.4.0
-- Gold Tools, Armor and Eatables Rose Textures and translation keys
+_Gold Textures and Crit Sounds!_
+- Gold Tools, Armor and Eatables Rose Textures and translation keys!!
 - added new crit sounds
 - added new splashes
 - made explosions invisible
