@@ -36,7 +36,18 @@ jobs:
       with:
         name: resource-pack-artifact
         path: ${{ env.ZIP_NAME }}
-
+        
+    - name: Prepare Modrinth changelog
+      id: prepare-modrinth-changelog
+      run: |
+        # Decode GitHub-encoded newlines
+        CHANGELOG="${{ steps.read-changelog.outputs.changelog }}"
+        CHANGELOG="${CHANGELOG//'%0A'/$'\n'}"
+        CHANGELOG="${CHANGELOG//'%0D'/$'\r'}"
+        CHANGELOG="${CHANGELOG//'%25'/'%'}"
+        echo "DECODED_CHANGELOG<<EOF" >> $GITHUB_OUTPUT
+        echo "$CHANGELOG" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -46,7 +57,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
-          ${{ steps.read-changelog.outputs.changelog }}
+          ${{ steps.prepare-modrinth-changelog.outputs.DECODED_CHANGELOG }}
           Automated release created by GitHub Actions
         draft: false
         prerelease: false
@@ -60,24 +71,13 @@ jobs:
         asset_path: "${{ env.ZIP_NAME }}"
         asset_name: "${{ env.ZIP_NAME }}"
         asset_content_type: application/zip
-    - name: Prepare Modrinth changelog
-      id: prepare-modrinth-changelog
-      run: |
-        # Decode GitHub-encoded newlines
-        CHANGELOG="${{ steps.read-changelog.outputs.changelog }}"
-        CHANGELOG="${CHANGELOG//'%0A'/$'\n'}"
-        CHANGELOG="${CHANGELOG//'%0D'/$'\r'}"
-        CHANGELOG="${CHANGELOG//'%25'/'%'}"
-        echo "DECODED_CHANGELOG<<EOF" >> $GITHUB_OUTPUT
-        echo "$CHANGELOG" >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
     - name: Upload to Modrinth
       uses: cloudnode-pro/modrinth-publish@v2
       with:
         project: iQx2ijVe
         version: ${{ github.ref_name }}
         loaders: '["minecraft"]'
-        game-versions: '["1.21.4", "1.21.5","1.21.6","1.21.7"]'
+        game-versions: '["1.21.x"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
         changelog: ${{ steps.prepare-modrinth-changelog.outputs.DECODED_CHANGELOG }}

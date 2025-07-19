@@ -1,5 +1,8 @@
 {
     "rpo.PvPForCuties": "PvP For Cuties",
     "rpo.PvPForCuties.enableCustomCitSound": "Custom Crit Sound",
-    "rpo.tooltip.PvPForCuties.enableCustomCitSound": "Toggles The Custom Crit sound"
+    "rpo.PvPForCuties.enableCustomCitSound.tooltip": "Toggles The Custom Crit sound",
+    "rpo.PvPForCuties.blocks": "Blocks",
+    "rpo.PvPForCuties.blocks.enableCobwebOutline": "Cobweb Outline",
+    "rpo.PvPForCuties.blocks.enableCobwebOutline.tooltip": "Toggle The Outline of Cobwebs"
 }

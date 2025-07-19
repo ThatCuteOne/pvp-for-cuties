@@ -1,8 +1,11 @@
 {
-    id: "PvPForCuties",
-    version: 13,
-    capabilities: ["FileFilter", "DirFilter"],
-    conf: {
-        enableCustomCitSound: true
+    "id": "PvPForCuties",
+    "version": 13,
+    "capabilities": ["FileFilter", "DirFilter"],
+    "conf": {
+        "enableCustomCitSound": true,
+        'blocks':{
+            'enableCobwebOutline': true
+        }
     }
 }
