@@ -6,6 +6,10 @@
         "enableCustomCitSound": true,
         'blocks':{
             'enableCobwebOutline': true
+        },
+        'smallItems':{
+            "enableSmallHandeld" : false,
+            "enableSmallgenerated": false
         }
     }
 }
