@@ -1,11 +1,10 @@
 {
     "pack": {
-        "description": "By §dCuties §rfor §dCuties :3\n         §8[1.21.3+]",
+        "description": "By §dCuties §rfor §dCuties :3\n         §8[1.21+]",
         "pack_format": 46,
-        "supported_formats": {
-            "min_inclusive": 22,
-            "max_inclusive": 320
-        },
+        "supported_formats": [46,65],
+        "min_format":46,
+        "max_format":65,
         "authors":[
             {
                 "name":"ThatCuteOne",
@@ -53,15 +52,19 @@
     "overlays": {
 		"entries": [
 			{
-				"formats": {"min_inclusive": 1, "max_inclusive": 42},
+				"formats": [1,42],
 				"directory": "overlay_pre_1.21.4"
 			},
             {
-                "formats":{"min_inclusive": 55,"max_inclusive": 200},
+                "formats":[55,200],
+                "min_format":55,
+                "max_format":200,
                 "directory": "overlay_1.21.5"
             },
             {
-                "formats":{"min_inclusive": 63,"max_inclusive": 200},
+                "formats":[63,200],
+                "min_format":63,
+                "max_format":200,
                 "directory": "overlay_1.21.6"
             }
 		]
