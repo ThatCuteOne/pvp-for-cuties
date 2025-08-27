@@ -1,4 +1,4 @@
-# PVP for Cuties v1.4.1 or v1.5.0
+# PVP for Cuties v1.4.1
 #### Additions
 - add glowing armortrims[1.21.6+]
 - add respackopts setting for Cobweb outline(default:true)
