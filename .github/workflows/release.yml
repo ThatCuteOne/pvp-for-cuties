@@ -3,27 +3,16 @@ name: Build and Create Release
 on:
   push:
     tags:
-      - 'v*' # This triggers the workflow when you push a tag starting with 'v'
+      - 'v*'
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    outputs:
-      changelog-content: ${{ steps.read-changelog.outputs.changelog }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - name: Read changelog file
-      id: read-changelog
-      run: |
-        CHANGELOG=$(cat CHANGELOG.md)
-        # Escape for GitHub output
-        CHANGELOG="${CHANGELOG//'%'/'%25'}"
-        CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-        CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-        echo "changelog=${CHANGELOG}" >> $GITHUB_OUTPUT
     - name: Create ZIP file
       run: |
         COMMIT_ID=$(git rev-parse --short HEAD)
@@ -36,12 +25,10 @@ jobs:
       with:
         name: resource-pack-artifact
         path: ${{ env.ZIP_NAME }}
-        
-    - name: Prepare Modrinth changelog
-      id: prepare-modrinth-changelog
+    - name: Read changelog file
+      id: read-changelog
       run: |
-        # Decode GitHub-encoded newlines
-        CHANGELOG="${{ steps.read-changelog.outputs.changelog }}"
+        CHANGELOG=$(cat CHANGELOG.md)
         CHANGELOG="${CHANGELOG//'%0A'/$'\n'}"
         CHANGELOG="${CHANGELOG//'%0D'/$'\r'}"
         CHANGELOG="${CHANGELOG//'%25'/'%'}"
@@ -57,7 +44,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
-          ${{ steps.prepare-modrinth-changelog.outputs.DECODED_CHANGELOG }}
+          ${{ steps.changelog.outputs.DECODED_CHANGELOG }}
           Automated release created by GitHub Actions
         draft: false
         prerelease: false
@@ -81,3 +68,18 @@ jobs:
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
         changelog: ${{ steps.prepare-modrinth-changelog.outputs.DECODED_CHANGELOG }}
+    - name: "Actions for Discord"
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        DISCORD_USERNAME: "Adaptive Modpack"
+        DISCORD_AVATAR: https://cdn.modrinth.com/data/iQx2ijVe/29eddb9ed69325732b1280f295c35428b3f8115f_96.webp
+        DISCORD_MENTIONS: >-
+          {
+            "allowed_mentions": {
+              "roles": ["1325604992484376688"]
+            }
+          }
+
+      uses: Ilshidur/action-discord@0.4.0
+      with:
+        args: "<@&1325604992484376688>\n${{ steps.changelog.outputs.DECODED_CHANGELOG }}\nDownload: https://modrinth.com/resourcepack/pvp-for-cuties/version/${{ github.ref_name }}"
