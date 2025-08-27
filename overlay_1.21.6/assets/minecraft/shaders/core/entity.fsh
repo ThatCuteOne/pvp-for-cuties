@@ -15,6 +15,7 @@ in vec2 texCoord0;
 out vec4 fragColor;
 
 void main() {
+	vec2 texSize = textureSize(Sampler0, 0);
     vec4 color = texture(Sampler0, texCoord0);
 #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) {
@@ -30,7 +31,10 @@ void main() {
     color.rgb = mix(NewoverlayColor.rgb, color.rgb, overlayColor.a);
 #endif
 #ifndef EMISSIVE
-    color *= lightMapColor;
+	if (texSize.x == 2048 && mod(texSize.y, 1024) == 0) {
+	} else {
+		color *= lightMapColor;
+	}
 #endif
     fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }
