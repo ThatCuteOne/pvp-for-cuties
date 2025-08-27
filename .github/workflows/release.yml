@@ -44,7 +44,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
-          ${{ steps.changelog.outputs.DECODED_CHANGELOG }}
+          ${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}
           Automated release created by GitHub Actions
         draft: false
         prerelease: false
@@ -67,11 +67,11 @@ jobs:
         game-versions: '["1.21.x","25w31a"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
-        changelog: ${{ steps.prepare-modrinth-changelog.outputs.DECODED_CHANGELOG }}
+        changelog: ${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}
     - name: "Actions for Discord"
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        DISCORD_USERNAME: "Adaptive Modpack"
+        DISCORD_USERNAME: "PvP for Cuties"
         DISCORD_AVATAR: https://cdn.modrinth.com/data/iQx2ijVe/29eddb9ed69325732b1280f295c35428b3f8115f_96.webp
         DISCORD_MENTIONS: >-
           {
@@ -82,4 +82,4 @@ jobs:
 
       uses: Ilshidur/action-discord@0.4.0
       with:
-        args: "<@&1325604992484376688>\n${{ steps.changelog.outputs.DECODED_CHANGELOG }}\nDownload: https://modrinth.com/resourcepack/pvp-for-cuties/version/${{ github.ref_name }}"
+        args: "<@&1325604992484376688>\n${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}\nDownload: https://modrinth.com/resourcepack/pvp-for-cuties/version/${{ github.ref_name }}"
