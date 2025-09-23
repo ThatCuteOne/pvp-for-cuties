@@ -34,6 +34,7 @@ void main() {
 #ifndef NO_OVERLAY
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
 #endif
+#ifndef EMISSIVE
     if (texSize.x == 2048 && mod(texSize.y, 1024) == 0) {
         float brightness = dot(color.rgb, vec3(0.299, 0.587, 0.114));
         float glowFactor = smoothstep(GLOW_THRESHOLD, 0.8, brightness);
@@ -46,6 +47,6 @@ void main() {
     } else {
         color *= lightMapColor;
     }
-    
+#endif
     fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }
