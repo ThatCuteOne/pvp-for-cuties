@@ -1,10 +1,5 @@
-# PVP for Cuties v1.4.1
-#### Additions
-- add glowing armortrims[1.21.6+]
-- add respackopts setting for Cobweb outline(default:true)
-- support for 1.21.9 snapshot
+# PVP for Cuties v1.4.2
+#### Changes
+- tweak glowing armortrims[1.21.6+]
 #### Fixes
-- fix armortrim colors
-- improved look of the gold ingot
-- Blåhaj of Undying mod compat(respackopts only)
-- fix respackopts tooltips
+- fix skulls not rendering pre 1.21.4
