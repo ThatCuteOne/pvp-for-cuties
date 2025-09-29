@@ -9,7 +9,8 @@
         },
         'smallItems':{
             "enableSmallHandeld" : false,
-            "enableSmallgenerated": false
+            "enableSmallgenerated": false,
+            "sideShield": false
         }
     }
 }
