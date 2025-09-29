@@ -8,7 +8,7 @@
             'enableCobwebOutline': true
         },
         'smallItems':{
-            "enableSmallHandeld" : false,
+            "enableSmallHandheld" : false,
             "enableSmallgenerated": false,
             "sideShield": false
         }
