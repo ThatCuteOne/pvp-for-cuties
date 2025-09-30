@@ -64,7 +64,7 @@ jobs:
         project: iQx2ijVe
         version: ${{ github.ref_name }}
         loaders: '["minecraft"]'
-        game-versions: '["1.21.x","25w31a"]'
+        game-versions: '["1.21.x"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
         changelog: ${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}
