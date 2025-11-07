@@ -36,13 +36,13 @@ void main() {
 #ifdef PER_FACE_LIGHTING
     color *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
 #else
+    color *= vertexColor * ColorModulator;
 #endif
 #ifndef NO_OVERLAY
-        vec4 NewoverlayColor = overlayColor;
+    vec4 NewoverlayColor = overlayColor;
     if(dot(overlayColor.rgb - vec3(1,0,0),overlayColor.rgb - vec3(1,0,0)) <= 0.00001){
         NewoverlayColor = vec4(163.0/255.0,1.0/255.0,160.0/255.0,1.0);
     }
-
     color.rgb = mix(NewoverlayColor.rgb, color.rgb, overlayColor.a);
 #endif
 #ifndef EMISSIVE
