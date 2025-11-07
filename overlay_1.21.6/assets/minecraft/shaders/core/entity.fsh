@@ -31,7 +31,12 @@ void main() {
     color *= vertexColor * ColorModulator;
     
 #ifndef NO_OVERLAY
-    color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
+    vec4 NewoverlayColor = overlayColor;
+    if(dot(overlayColor.rgb - vec3(1,0,0),overlayColor.rgb - vec3(1,0,0)) <= 0.00001){
+        NewoverlayColor = vec4(163.0/255.0,1.0/255.0,160.0/255.0,1.0);
+    }
+
+    color.rgb = mix(NewoverlayColor.rgb, color.rgb, overlayColor.a);
 #endif
 #ifndef EMISSIVE
     if (texSize.x == 2048 && mod(texSize.y, 1024) == 0) {
