@@ -28,6 +28,7 @@ const float GLOW_BOOST = 0.6;
 void main() {
     vec2 texSize = textureSize(Sampler0, 0);
     vec4 color = texture(Sampler0, texCoord0);
+    vec4 colorTemp = texture(Sampler0, vec2(64.0/texSize.x, 0.0/texSize.y));
 #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) {
         discard;
@@ -46,7 +47,7 @@ void main() {
     color.rgb = mix(NewoverlayColor.rgb, color.rgb, overlayColor.a);
 #endif
 #ifndef EMISSIVE
-if (texSize.x == 2048 && mod(texSize.y, 1024) == 0) {
+if (texSize.x == 2048 && mod(texSize.y, 1024) == 0 && colorTemp.a != 1.0) {
     float brightness = dot(color.rgb, vec3(0.299, 0.587, 0.114));
     float glowFactor = smoothstep(GLOW_THRESHOLD, 0.8, brightness);
     
