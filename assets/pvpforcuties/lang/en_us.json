@@ -1,0 +1,12 @@
+{
+    "rpo.PvPForCuties": "PvP For Cuties",
+    "rpo.PvPForCuties.enableCustomCitSound": "Custom Crit Sound",
+    "rpo.PvPForCuties.enableCustomCitSound.tooltip": "Toggles The Custom Crit sound",
+    "rpo.PvPForCuties.blocks": "Blocks",
+    "rpo.PvPForCuties.blocks.enableCobwebOutline": "Cobweb Outline",
+    "rpo.PvPForCuties.blocks.enableCobwebOutline.tooltip": "Toggle The Outline of Cobwebs",
+    "rpo.PvPForCuties.smallItems" : "Items",
+    "rpo.PvPForCuties.smallItems.enableSmallHandheld" : "Enable Small Tools & Weapons",
+    "rpo.PvPForCuties.smallItems.enableSmallgenerated" : "Enable Small Items",
+    "rpo.PvPForCuties.smallItems.sideShield" : "Enable Side Shield"
+}

@@ -1,0 +1,16 @@
+{
+    "id": "PvPForCuties",
+    "version": 13,
+    "capabilities": ["FileFilter", "DirFilter","DirFilterAdditive"],
+    "conf": {
+        "enableCustomCitSound": true,
+        'blocks':{
+            'enableCobwebOutline': true
+        },
+        'smallItems':{
+            "enableSmallHandheld" : false,
+            "enableSmallgenerated": false,
+            "sideShield": false
+        }
+    }
+}

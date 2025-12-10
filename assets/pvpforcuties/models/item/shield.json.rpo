@@ -1,0 +1,4 @@
+{
+    "condition": "!smallItems.sideShield",
+    "fallback": "assets/pvpforcuties/side_shield/shield.json"
+}

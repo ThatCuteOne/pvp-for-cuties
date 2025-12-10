@@ -1,0 +1,4 @@
+{
+    "condition": "!(smallItems.enableSmallgenerated | smallItems.enableSmallHandheld)",
+    "fallback": "assets/pvpforcuties/models/item"
+}
