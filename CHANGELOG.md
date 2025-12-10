@@ -1,3 +1,3 @@
-# PVP for Cuties v1.5.2
+# PVP for Cuties v1.5.3
 ### Additions
-- fix hit overlay color on 1.21.6-1.21.10
+- fix shader on 1.21.11
