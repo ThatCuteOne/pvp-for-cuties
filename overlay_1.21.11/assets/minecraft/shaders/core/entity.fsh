@@ -28,6 +28,8 @@ const float GLOW_BOOST = 0.6;
 
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
+    vec2 textureSize = textureSize(Sampler0, 0);
+	vec4 colorTemperature = texture(Sampler0, vec2(64.0/textureSize.x, 0.0/textureSize.y));
 
 #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) discard;
@@ -48,10 +50,7 @@ void main() {
 #endif
 
 #ifndef EMISSIVE
-    // disabled for now as i dont know how to implement it properly
-    bool isArmorTrim = false;
-    //bool isArmorTrim = (texCoord0.x >= 0.41 && texCoord0.x < 0.415  && texCoord0.y >= 0.24  && texCoord0.y < 0.25);// || // crown
-    //(texCoord0.x >= 0.539 && texCoord0.x < 0.5399 && texCoord0.y >= 0.35 && texCoord0.y < 0.36);
+    bool isArmorTrim = (textureSize.x == 2048 && mod(textureSize.y, 1024) == 0 && colorTemperature.a != 1.0);
 
     if(isArmorTrim) {
         float brightness = dot(color.rgb, vec3(0.299, 0.587, 0.114));
