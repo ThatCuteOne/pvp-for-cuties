@@ -1,6 +1,6 @@
 {
     "providers": [
-                {
+        {
             "type": "bitmap",
             "file": "minecraft:font/tilde.png",
             "ascent": 7,
