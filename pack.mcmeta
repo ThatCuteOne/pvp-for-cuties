@@ -2,9 +2,9 @@
     "pack": {
         "description": "By §dCuties §rfor §dCuties :3\n         §8[1.21+]",
         "pack_format": 46,
-        "supported_formats": [46,75],
+        "supported_formats": [46,84],
         "min_format":46,
-        "max_format":75,
+        "max_format":84,
         "authors":[
             {
                 "name":"ThatCuteOne",
