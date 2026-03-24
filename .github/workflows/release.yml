@@ -1,5 +1,8 @@
 name: Build and Create Release
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
@@ -64,7 +67,7 @@ jobs:
         project: iQx2ijVe
         version: ${{ github.ref_name }}
         loaders: '["minecraft"]'
-        game-versions: '["1.21.x"]'
+        game-versions: '["1.21.x","26.1"]'
         files: '${{ env.ZIP_NAME }}'
         token: ${{ secrets.MODRINTH}}
         changelog: ${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}
