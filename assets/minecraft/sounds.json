@@ -1,0 +1,9 @@
+{
+  "entity.player.attack.crit": {
+    "sounds": [
+      "entity/player/attack/crit1",
+      "entity/player/attack/crit2",
+      "entity/player/attack/crit3"
+    ]
+  }
+}
