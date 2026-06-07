@@ -30,6 +30,9 @@ void main() {
     vec4 color = texture(Sampler0, texCoord0);
     vec2 textureSize = textureSize(Sampler0, 0);
 	vec4 colorTemperature = texture(Sampler0, vec2(64.0/textureSize.x, 0.0/textureSize.y));
+    bool isTrimAtlas = (texture(Sampler0, vec2(70/textureSize.x, 5/textureSize.y)) == vec4(0, 0, 0, 1));
+	bool isTrimAtlas2 = (texture(Sampler0, vec2(70/textureSize.x, 13/textureSize.y)) == vec4(248, 0, 248, 255)/255.);
+	bool isTrim = (textureSize.x == 2048 && mod(textureSize.y, 1024) == 0 && colorTemperature.a != 1.0) && isTrimAtlas && isTrimAtlas2;
 
 #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) discard;
@@ -50,9 +53,7 @@ void main() {
 #endif
 
 #ifndef EMISSIVE
-    bool isArmorTrim = (textureSize.x == 2048 && mod(textureSize.y, 1024) == 0 && colorTemperature.a != 1.0);
-
-    if(isArmorTrim) {
+    if(isTrim) {
         float brightness = dot(color.rgb, vec3(0.299, 0.587, 0.114));
         float glowFactor = smoothstep(GLOW_THRESHOLD, 0.8, brightness);
 
