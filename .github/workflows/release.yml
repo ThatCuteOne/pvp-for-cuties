@@ -76,7 +76,7 @@ jobs:
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         DISCORD_USERNAME: "PvP for Cuties"
-        DISCORD_AVATAR: https://cdn.modrinth.com/data/iQx2ijVe/29eddb9ed69325732b1280f295c35428b3f8115f_96.webp
+        DISCORD_AVATAR: https://raw.githubusercontent.com/ThatCuteOne/pvp-for-cuties/refs/heads/main/icon-big.png
         DISCORD_MENTIONS: '{"roles": ["1325604992484376688"]}'
       with:
         args: "<@&1325604992484376688>\n${{ steps.read-changelog.outputs.DECODED_CHANGELOG }}\nDownload: https://modrinth.com/resourcepack/pvp-for-cuties/version/${{ github.ref_name }}"
