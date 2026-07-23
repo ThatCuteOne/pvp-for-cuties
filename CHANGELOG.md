@@ -1,3 +1,3 @@
-# PVP for Cuties v1.6.1
+# PVP for Cuties v1.6.2
 ### Fixes
-- fix most blocks glowing on 1.21.11
+- update to 26.2
