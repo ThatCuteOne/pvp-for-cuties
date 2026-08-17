@@ -11,6 +11,9 @@
             "enableSmallHandheld" : false,
             "enableSmallgenerated": false,
             "sideShield": false
+        },
+        'compat': {
+            "disableTotemTweaks": false
         }
     }
 }

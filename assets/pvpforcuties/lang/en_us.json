@@ -8,5 +8,9 @@
     "rpo.PvPForCuties.smallItems" : "Items",
     "rpo.PvPForCuties.smallItems.enableSmallHandheld" : "Enable Small Tools & Weapons",
     "rpo.PvPForCuties.smallItems.enableSmallgenerated" : "Enable Small Items",
-    "rpo.PvPForCuties.smallItems.sideShield" : "Enable Side Shield"
+    "rpo.PvPForCuties.smallItems.sideShield" : "Enable Side Shield",
+    "rpo.PvPForCuties.compat.disableTotemTweaks" : "Disable Complex Small Totem",
+    "rpo.PvPForCuties.compat.disableTotemTweaks.tooltip" : "Try disabing this if you use 3D totem texturepacks",
+    "rpo.PvPForCuties.compat" : "Compatiblity",
+    "rpo.PvPForCuties.compat.tooltip" : "Try toggling one of these when using PvP for Cuties in combination with other Resourcepacks"
 }
