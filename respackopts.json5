@@ -1,6 +1,6 @@
 {
     "id": "PvPForCuties",
-    "version": 13,
+    "version": 14,
     "capabilities": ["FileFilter", "DirFilter","DirFilterAdditive"],
     "conf": {
         "enableCustomCitSound": true,
